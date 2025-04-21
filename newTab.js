@@ -711,6 +711,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (tasks[originalIndex].completed) {
           const deleteButton = taskItem.querySelector(".delete-task");
           if (deleteButton) deleteButton.remove();
+          // Show inspirational quote overlay when a task is checked
+          if (quoteOverlay) {
+            const idx = Math.floor(Math.random() * quotes.length);
+            quoteOverlay.innerText = quotes[idx];
+            quoteOverlay.classList.remove("hidden");
+          }
         }
 
         let newPosition = 0;
