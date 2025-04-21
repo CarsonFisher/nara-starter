@@ -493,15 +493,20 @@ input[type="checkbox"]:checked+.task-text {
 .quote-overlay {
     position: fixed;
     bottom: 20px;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    max-width: 80%;
     text-align: center;
     font-size: 1.2rem;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.85);
+    color: #ffffff;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px 16px;
+    border-radius: 8px;
     pointer-events: none;
-    z-index: 0;
-    padding: 0 20px;
+    z-index: 100;
 }
 /* Mood Selection Prompt */
 .mood-prompt {
