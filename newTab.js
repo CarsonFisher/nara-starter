@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Inspirational Quote Overlay: pick and display a random quote
+  const quotes = [
+    "Believe you can and you're halfway there.",
+    "You are capable of amazing things.",
+    "Don't watch the clock; do what it does. Keep going.",
+    "Your only limit is your mind.",
+    "Dream it. Wish it. Do it.",
+    "Stay positive, work hard, make it happen.",
+    "Success doesn't just find you. You have to go out and get it.",
+    "Great things never come from comfort zones.",
+    "Don't stop until you're proud.",
+    "Keep going. Everything you need will come to you at the perfect time."
+  ];
+  const quoteOverlay = document.getElementById("quote-overlay");
+  if (quoteOverlay) {
+    const idx = Math.floor(Math.random() * quotes.length);
+    quoteOverlay.innerText = quotes[idx];
+  }
+  // Create background container
   const backgroundContainer = document.createElement("div");
   backgroundContainer.className = "background-container";
   document.body.appendChild(backgroundContainer);
