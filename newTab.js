@@ -17,6 +17,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const idx = Math.floor(Math.random() * quotes.length);
     quoteOverlay.innerText = quotes[idx];
   }
+  // Mood selection prompt
+  const moodPrompt = document.getElementById("mood-prompt");
+  const moodButtons = document.querySelectorAll(".mood-button");
+  if (moodPrompt && moodButtons.length) {
+    chrome.storage.local.get("mood", (data) => {
+      if (!data.mood) {
+        moodPrompt.classList.remove("hidden");
+      }
+    });
+    moodButtons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const mood = btn.dataset.mood;
+        chrome.storage.local.set({ mood }, () => {
+          moodPrompt.classList.add("hidden");
+          console.log("Mood set to", mood);
+        });
+      });
+    });
+  }
   // Create background container
   const backgroundContainer = document.createElement("div");
   backgroundContainer.className = "background-container";

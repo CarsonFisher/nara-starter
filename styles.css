@@ -503,3 +503,33 @@ input[type="checkbox"]:checked+.task-text {
     z-index: 0;
     padding: 0 20px;
 }
+/* Mood Selection Prompt */
+.mood-prompt {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1000;
+    font-size: 1rem;
+}
+.mood-prompt.hidden {
+    display: none !important;
+}
+.mood-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+.mood-button:hover {
+    transform: scale(1.2);
+}
